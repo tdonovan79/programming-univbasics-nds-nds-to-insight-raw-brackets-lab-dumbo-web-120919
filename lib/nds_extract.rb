@@ -24,7 +24,7 @@ def directors_totals(directors_database)
     #create hash with director/total
     director_hash = {"#{director_database[director_element][:name]}": director_total}
     #push director hask to reult hash
-    result << director_hash
+    result. << director_hash
     #increment director iterator
     director_element += 1
   end
