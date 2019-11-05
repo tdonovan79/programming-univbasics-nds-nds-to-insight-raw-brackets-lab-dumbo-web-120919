@@ -1,22 +1,31 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
-
-def directors_totals(nds)
-  # Remember, it's always OK to pretty print what you get *in* to make sure
-  # that you know what you're starting with!
-  #
-  #
-  # The Hash result be full of things like "Jean-Pierre Jeunet" => "222312123123"
+require 'pp'
+pp directors_database
+def directors_totals(directors_database)
+  #where totals are stored
   result = {
   }
-  #
-  # Use loops, variables and the accessing method, [], to loop through the NDS
-  # and total up all the
-  # ...
-  # ...
-  # ...
-  #
-  #
-  # Be sure to return the result at the end!
-  nil
+  #director iterator
+  director_element = 0
+  #iterate through directors
+  while director_element < directors_database.length do
+    #create total for director
+    director_total = 0
+    #movie iterator
+    movie_element = 0
+    #iterate through movies for each director
+    while movie_element < directors_database[director_element][:movies].length do
+      #add gross of movie to director total
+      director_total += directors_database[director_element][:movies][movie_element][:worldwide_gross]
+      #increment movie iterator
+      movie_element += 1
+    end
+    #add director/total hask to result hash
+    result["#{directors_database[director_element][:name]}"] = director_total
+    #increment director iterator
+    director_element += 1
+  end
+  #return resultant hash
+  return result
 end
