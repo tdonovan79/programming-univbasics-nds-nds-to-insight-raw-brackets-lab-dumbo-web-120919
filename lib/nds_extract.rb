@@ -15,9 +15,9 @@ def directors_totals(directors_database)
     #movie iterator
     movie_element = 0
     #iterate through movies for each director
-    while movie_element < directors_database[directors_element][:movies].length do
+    while movie_element < directors_database[director_element][:movies].length do
       #add gross of movie to director total
-      director_total += directors_database[directors_element][:movies][movie_element]
+      director_total += directors_database[director_element][:movies][movie_element]
       #increment movie iterator
       movie_element += 1
     end
