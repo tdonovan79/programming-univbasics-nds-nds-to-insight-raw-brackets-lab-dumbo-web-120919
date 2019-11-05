@@ -2,7 +2,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 require 'pp'
 pp directors_database
-def directors_totals(nds)
+def directors_totals(directors_database)
   #where totals are stored
   result = {
   }
