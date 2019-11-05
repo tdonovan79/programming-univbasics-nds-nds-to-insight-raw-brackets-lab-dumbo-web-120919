@@ -21,10 +21,8 @@ def directors_totals(directors_database)
       #increment movie iterator
       movie_element += 1
     end
-    #create hash with director/total
-    director_hash = {"#{director_database[director_element][:name]}": director_total}
-    #push director hask to reult hash
-    result. << director_hash
+    #add director/total hask to result hash
+    result.director_database[director_element][:name] = director_total
     #increment director iterator
     director_element += 1
   end
